@@ -2,6 +2,7 @@ package dev.shubham.demospring;
 
 import dev.shubham.demospring.run.Locations;
 import dev.shubham.demospring.run.Run;
+import dev.shubham.demospring.run.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -22,12 +23,12 @@ public class Application {
 		log.info("Application started successfully");
 	}
 
-	@Bean
-	CommandLineRunner runner() {
-		return args -> {
-			Run run = new Run(1,"First Run ", LocalDateTime.now(), LocalDateTime.now().plusHours(1),5, Locations.OUTDOOR);
-            log.info("Run: "+run);
-		};
-	}
+//	@Bean
+//	CommandLineRunner runner(RunRepository runRepository) {
+//		return args -> {
+//			Run run = new Run(1,"First Run ", LocalDateTime.now(), LocalDateTime.now().plusHours(1),5, Locations.OUTDOOR);
+//			runRepository.create(run);
+//		};
+//	}
 
 }
