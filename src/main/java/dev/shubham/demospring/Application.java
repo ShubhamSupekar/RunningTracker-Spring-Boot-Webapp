@@ -1,16 +1,9 @@
 package dev.shubham.demospring;
 
-import dev.shubham.demospring.run.Locations;
-import dev.shubham.demospring.run.Run;
-import dev.shubham.demospring.run.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import java.time.LocalDateTime;
-
 
 
 @SpringBootApplication
