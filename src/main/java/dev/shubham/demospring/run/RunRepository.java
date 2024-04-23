@@ -6,5 +6,4 @@ import java.util.List;
 
 public interface RunRepository extends ListCrudRepository <Run, Integer> {
     List<Run> findAllByLocation(String location);
-
 }
