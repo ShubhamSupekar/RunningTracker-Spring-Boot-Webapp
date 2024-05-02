@@ -11,9 +11,11 @@ import java.util.Optional;
 public class RunController {
 
     private final RunRepository runRepository;
+    private final JdbcClientRunRepository jdbcClientRunRepository;
 
-    public RunController(RunRepository runRepository) {
+    public RunController(RunRepository runRepository, JdbcClientRunRepository jdbcClientRunRepository) {
         this.runRepository = runRepository;
+        this.jdbcClientRunRepository = jdbcClientRunRepository;
     }
 
     @GetMapping("")
@@ -41,7 +43,7 @@ public class RunController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
     void update(@Valid @RequestBody Run run, @PathVariable Integer id){
-        runRepository.save(run);
+        jdbcClientRunRepository.update(run, id);
     }
 
 //    //delete

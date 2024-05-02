@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 
 
 public record Run(
-        @Id
         Integer id,
         @NotEmpty
         String title,
@@ -18,9 +17,7 @@ public record Run(
         LocalDateTime completedOn,
         @Positive
         Integer miles,
-        Locations location,
-        @Version
-        Integer version
+        Locations location
 ) {
 
     public Run{
